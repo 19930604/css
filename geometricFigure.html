@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Geometric figure</title>
+	<style type="text/css">
+	.clear{
+		clear: both;
+	}
+	div{
+		float: left;
+		margin-right: 60px;
+		margin-bottom: 20px;
+	}
+	.square{
+		width: 100px;
+		height: 100px;
+		background-color: rgb(255,128,128);
+	}
+	.rectangle{
+		width: 150px;
+		height: 100px;
+		background-color: rgb(255,255,128);
+	}
+	.trapezoid {
+		width: 100px;
+		border-left: 50px solid transparent; 
+		border-right: 50px solid transparent;
+		border-bottom: 100px solid rgb(255,128,255);
+		height: 0;
+	}
+	.parallelogram {
+		width: 150px; 
+		height: 100px; 
+		background: rgb(0,255,128);
+		-webkit-transform: skew(20deg); 
+		-moz-transform: skew(20deg); 
+		-o-transform: skew(20deg); 
+		transform: skew(20deg);
+	}
+	.circle{
+		width: 100px;
+		height: 100px;
+		background: rgb(128,255,255);
+		-webkit-border-radius:50%;
+		-moz-border-radius: 50%;
+		-o-border-radius: 50%;
+		border-radius: 50%;
+	}
+	.oval{
+		width: 150px;
+		height: 100px;
+		background: rgb(0,128,255);
+		-webkit-border-radius:50%;
+		-moz-border-radius: 50%;
+		-o-border-radius: 50%;
+		border-radius: 50%;
+		-webkit-border-radius:75px/50px;
+		-moz-border-radius:75px/50px;
+		-o-border-radius:75px/50px;
+		border-radius:75px/50px;
+	}
+	.triangleL {
+		width: 0;
+		border-top: 50px solid transparent; 
+		border-right: 50px solid rgb(128,255,128);
+		border-bottom: 50px solid transparent;
+		height: 0;
+	}
+	.triangleR {
+		width: 0;
+		border-left: 50px solid rgb(128,255,128); 
+		border-top: 50px solid transparent;
+		border-bottom: 50px solid transparent;
+		height: 0;
+	}
+	.triangleT {
+		width: 0;
+		border-left: 100px solid transparent; 
+		border-right: 100px solid transparent;
+		border-bottom: 100px solid rgb(128,255,128);
+		height: 0;
+	}
+	.triangleB {
+		width: 0;
+		border-left: 100px solid transparent; 
+		border-right: 100px solid transparent;
+		border-top: 100px solid rgb(128,255,128);
+		height: 0;
+	}
+	.triangleEq{
+		width: 0;
+		border-bottom: 50px solid transparent; 
+		border-right: 50px solid transparent;
+		border-top: 50px solid rgb(128,255,128);
+		border-left: 50px solid rgb(128,255,128);
+		height: 0;
+	}
+	.diamond {
+		width: 100px;
+		height: 100px;
+		background-color: rgb(255,128,192);
+		-webkit-transform: rotate(-45deg); 
+		-moz-transform: rotate(-45deg); 
+		-o-transform: rotate(-45deg); 
+		transform: rotate(-45deg);
+	}
+	.star {
+	    width: 0;
+	    height: 0;
+	    position: relative;
+	    display: block;
+	    border-right: 50px solid transparent;
+	    border-bottom: 35px solid #fc2e5a;
+	    border-left: 50px solid transparent;
+	    -moz-transform: rotate(35deg);
+	    -webkit-transform: rotate(35deg);
+	    -o-transform: rotate(35deg);
+	    transform: rotate(35deg);
+	}
+  
+	.star:before {
+	    height: 0;
+	    width: 0;
+	    position: absolute;
+	    display: block;
+	    top: -22px;
+	    left: -32px;
+	    border-bottom: 40px solid #fc2e5a;
+	    border-left: 15px solid transparent;
+	    border-right: 15px solid transparent;
+	    content: '';
+	    -webkit-transform: rotate(-35deg);
+	    -moz-transform: rotate(-35deg);
+	    -o-transform: rotate(-35deg);
+	    transform: rotate(-35deg);
+	}
+	.star:after {
+	    content: '';
+	    width: 0;
+	    height: 0;
+	    position: absolute;
+	    display: block;
+	    top: 2px;
+	    left: -52px;
+	    color: #fc2e5a;
+	    border-right: 50px solid transparent;
+	    border-bottom: 35px solid #fc2e5a;
+	    border-left: 50px solid transparent;
+	    -webkit-transform: rotate(-70deg);
+	    -moz-transform: rotate(-70deg);
+	    -o-transform: rotate(-70deg);
+	    transform: rotate(-70deg);
+	}   
+	.starSix {
+	    width: 0;
+	    height: 0;
+	    display: block;
+	    position: relative;
+	    border-left: 50px solid transparent;
+	    border-right: 50px solid transparent;
+	    border-bottom: 86px solid #de34f7;
+	}
+	  
+	.starSix:after {
+	    content: "";
+	    width: 0;
+	    height: 0;
+	    position: absolute;
+	    top: 29px;
+	    left: -50px;
+	    border-left: 50px solid transparent;
+	    border-right: 50px solid transparent;
+	    border-top: 86px solid #de34f7;
+	}    
+	.hexagon{
+		width: 64px;
+		border-left: 25px solid transparent; 
+		border-right: 25px solid transparent;
+		border-bottom: 50px solid rgb(255,128,255);
+		height: 0;
+		position: relative;
+		margin-bottom:70px;
+	}
+	.hexagon:after{
+		content: "";
+		width:64px;
+		border-left: 25px solid transparent; 
+		border-right: 25px solid transparent;
+		border-top: 50px solid rgb(255,128,255);
+		height: 0;
+		position: absolute;
+		top: 50px;
+		left: -25px;
+	}
+	.love{
+		width: 50px;
+		height: 90px;
+		background-color: #f00;
+		border-radius: 25px 25px 0 0;
+		-webkit-transform: rotate(-45deg);
+	    -moz-transform: rotate(-45deg);
+	    -o-transform: rotate(-45deg);
+	    transform: rotate(-45deg);
+	    position: relative;
+	}
+	.love:after{
+		content: "";
+		width: 50px;
+		height: 90px;
+		background-color: #f00;
+		border-radius: 25px 25px 0 0;
+		-webkit-transform: rotate(90deg);
+	    -moz-transform: rotate(90deg);
+	    -o-transform: rotate(90deg);
+	    transform: rotate(90deg);
+	    position: absolute;
+	    left: 20px;
+	    top: 20px;
+	}
+	.egg{
+		width: 75px;
+		height: 100px;
+		background-color: #ff0;
+		border-radius: 50% 50% 50% 50%/60% 60% 40% 40% ;
+	}
+	.infinity {
+		width: 220px;
+		height: 220px;
+		position: relative;
+	}
+	.infinity:before,.infinity:after{
+		content: "";
+		position: absolute;
+		top: 0;
+    	left: 0;
+		width: 60px;
+		height: 60px;
+		border:20px solid rgb(255,128,0);  
+		border-radius:50px 50px 50px 0;
+		-webkit-transform: rotate(-135deg);
+	    -moz-transform: rotate(-135deg);
+	    -o-transform: rotate(-135deg);
+	    transform: rotate(-135deg);
+	}
+	.infinity:after{
+		left: auto;
+    	right: 8px;
+		border-radius: 50px 50px 50px 0;
+		-webkit-transform: rotate(45deg);
+	    -moz-transform: rotate(45deg);
+	    -o-transform: rotate(45deg);
+	    transform: rotate(45deg);
+	}
+	.bubble{
+		width: 150px;
+		min-height: 60px;
+		line-height: 20px;
+		padding:10px;
+		/*background-color: rgb(0,0,128);*/
+		border:2px solid rgb(0,0,128);
+		border-radius: 20px;
+		position: relative;
+		color: rgb(0,0,128);
+	}
+	.bubble:before{
+		content: "";
+		border-top: 10px solid transparent;
+		border-bottom: 10px solid transparent;
+		border-right: 20px solid rgb(0,0,128);
+		position: absolute;
+		left: -20px;
+		top: 50%;
+		margin-top: -10px;
+	}
+	.tail-lefttop{
+		border: 0 solid transparent; 
+		border-top:30px solid #669;
+		border-radius:100px 0 0 0;
+		width:100px;
+		height:100px;
+	}
+	.tail-righttop{
+		border: 0 solid transparent; 
+		border-top:30px solid #669;
+		border-radius:0 100px 0 0;
+		width:100px;
+		height:100px;
+	}
+	.tail-rightbottom{
+		border: 0 solid transparent;
+		border-bottom:30px solid #669;
+		border-radius:0 0 100px 0;
+		width:100px;
+		height:100px;
+	}
+	.tail-leftbottom{
+		border: 0 solid transparent; 
+		border-bottom:30px solid #669;
+		border-radius:0 0 0 100px;
+		width:100px;
+		height:100px;
+	}
+	.ring{
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		border: 20px solid transparent;
+		border-bottom-color: #f00;
+	}
+	</style>
+</head>
+<body>
+	<div class="square"></div>
+	<div class="rectangle"></div>
+	<div class="trapezoid"></div>
+	<div class="parallelogram"></div>
+	<div class="circle"></div>
+	<div class="oval"></div>
+	<div class="triangle"></div>
+	<div class="triangleL"></div>
+	<div class="triangleR"></div>
+	<div class="triangleT"></div>
+	<div class="triangleB"></div>
+	<div class="triangleEq"></div>
+	<div class="diamond"></div>
+	<div class="star"></div>
+	<div class="starSix"></div>
+	<div class="clear"></div>
+	<div class="hexagon"></div>
+	<div class="love"></div>
+	<div class="egg"></div>
+	<div class="infinity"></div>
+	<div class="bubble">hello world!</div>
+	<div class="tail-lefttop"></div>
+	<div class="tail-leftbottom"></div>
+	<div class="tail-rightbottom"></div>
+	<div class="tail-righttop"></div>
+	<div class="ring"></div>
+</body>
+</html>
